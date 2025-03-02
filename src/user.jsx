@@ -1,8 +1,8 @@
 function User(){
     return (
         <div>
-            <h1>User Component line 1</h1>
-            <h1>User Component line 2</h1>
+            <h1>User Component</h1>
+            <h1>This comes under user Component.</h1>
         </div>
 );
 }

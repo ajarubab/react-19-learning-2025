@@ -1,19 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import User from './user'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <h1>Count Value : {count}</h1>
-      <button onClick={()=>setCount(count+1)}> + </button>
-      <User/>
-    </>
-  )
+import User from "./user";
+function App(){
+  return(
+    <div>
+      <h1>App Component</h1>
+      <Fruit />
+    </div>
+  );
 }
 
-export default App
+function Color(){
+  return(
+    <div>
+      <h1>Color Component</h1>
+      <User/>
+    </div>
+  );
+}
+
+function Fruit(){
+  return(
+    <div>
+      <h1>Fruit Component</h1>
+      <Color></Color>
+    </div>
+  );
+}
+
+export default App;
