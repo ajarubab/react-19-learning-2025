@@ -3,6 +3,7 @@ function App(){
   return(
     <div>
       <h1>App Component</h1>
+      <h2>The Result of 10 + 15 is : {sum()}</h2>
       <Fruit />
     </div>
   );
@@ -24,6 +25,10 @@ function Fruit(){
       <Color></Color>
     </div>
   );
+}
+
+function sum(){
+  return 10+15;
 }
 
 export default App;
