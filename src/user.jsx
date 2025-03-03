@@ -8,3 +8,5 @@ function User(){
 }
 
 export default User;
+
+export const Username = "Raja kumar prasad";

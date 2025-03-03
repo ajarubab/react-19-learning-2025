@@ -1,34 +1,15 @@
-import User from "./user";
+import Home, {Color, Fruit, result} from "./Home";
+
 function App(){
-  return(
-    <div>
-      <h1>App Component</h1>
-      <h2>The Result of 10 + 15 is : {sum()}</h2>
-      <Fruit />
-    </div>
-  );
-}
-
-function Color(){
-  return(
-    <div>
-      <h1>Color Component</h1>
-      <User/>
-    </div>
-  );
-}
-
-function Fruit(){
-  return(
-    <div>
-      <h1>Fruit Component</h1>
-      <Color></Color>
-    </div>
-  );
-}
-
-function sum(){
-  return 10+15;
+    return (
+        <div>
+            <h1>App Component</h1>
+            <Home />
+            <Color/>
+            <Fruit />
+            <h1>Sum : {result}</h1>
+        </div>
+    );
 }
 
 export default App;
