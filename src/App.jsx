@@ -1,16 +1,27 @@
 function App() {
-    function callFun() { alert("Function called"); }
+    
+    let Age = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
+    let userObj = {
+        name : "Raja kumar",
+        email : "raja@abc.com",
+        state : "Delhi"
+    };
+    let userArray = ['ram','shyam','siya','radhe'];
+    let imgpath = "https://cdn.mos.cms.futurecdn.net/truJRnpVqJWCE3EaEjvaTk-650-80.jpg.webp";
+    let altImgPath = "Nothing";
+
+    
+    function sum(a,b) { return a+b; }
+    function hello() { return "Namaskaar"; }
+
     return (
         <div>
-            <h1>Raja Kumar prasad</h1>
-            <img class="photo" src="https://www.euroschoolindia.com/wp-content/uploads/2023/09/how-sun-powers-our-planet.jpg" alt="#" />
-            <ul>
-                <li>A for Apple</li>
-                <li>A for Aata</li>
-                <li>A for Aam</li>
-            </ul>
-            {/* <button onClick={()=>alert("function called")}>Click me</button> */}
-            <button onClick={callFun}>Click me</button>
+            <h1>Age : {Age} , {Age>=18?"Eligible to vote":"Minor"}</h1>
+            <h1>{hello()}</h1>
+            <h1>sum : {sum(2,4)}</h1>
+            <h2>{userObj.name} who live is {userObj.state} have mail id {userObj.email}</h2>
+            <h2>Jai {userArray[2]}-{userArray[0]}<br/>Jai {userArray[3]}-{userArray[1]}</h2>
+            <img src={imgpath} alt={altImgPath} />
         </div>
     );
 }
