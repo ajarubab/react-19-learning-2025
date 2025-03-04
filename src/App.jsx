@@ -1,23 +1,28 @@
-import Home, { Color, Fruit, result } from "./Home";
-
+import { createElement } from "react";
 function App() {
-    const Name = "Raja kumar Prasad";
-    let x = 12;
-    let y = 25;
-    return (
-        <div>
-            <h1>App Component</h1>
-            <Home />
-            <Color />
-            <Fruit />
-            <h1>Sum : {result}</h1>
-            <h2>{12 + 23 + 34 + 45}</h2>
-            <h1>Name is : {Name}</h1>
-            <h1>{x} * {y} = {x * y}</h1>
-            <button onClick={()=>alert("Hello")}>Click me</button>
-        </div>
-
-    );
+    return createElement(
+        "div",
+        { id: "rootDiv" },
+        "Hello Div",
+        createElement(
+            "div",
+            { id: "mainDiv" },
+            createElement(
+                "h1",
+                { id: "h1Tag" },
+                "Jai Siya Ram"
+            )
+        ),
+        createElement(
+            "div",
+            { id: "rootDiv" },
+            createElement(
+                "button",
+                { class: "btn1", onClick: () => alert('Radhe Radhe') },
+                "Click me"
+            )
+        )
+    )
 }
 
 export default App;
