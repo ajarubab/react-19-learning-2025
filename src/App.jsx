@@ -1,28 +1,43 @@
-function App() {
-    
-    let Age = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-    let userObj = {
-        name : "Raja kumar",
-        email : "raja@abc.com",
-        state : "Delhi"
-    };
-    let userArray = ['ram','shyam','siya','radhe'];
-    let imgpath = "https://cdn.mos.cms.futurecdn.net/truJRnpVqJWCE3EaEjvaTk-650-80.jpg.webp";
-    let altImgPath = "Nothing";
+import React,{useState} from "react";
+function App(){
+    function abhivadan(){
+        return("Namaste");
+    }
+    function greet(){
+        alert("Namaste");
+    }
+    function add(m,n){
+        return m+n;
+    }
+    let sky=()=>{
+        console.log("sky has no limits.");
+    }
+    let color=()=>{
+        return "Red";
+    }
+    let loc = (state)=>{
+        alert(state);
+    }
+    let multiply = (a,b)=>{
+        return a*b;
+    }
 
-    
-    function sum(a,b) { return a+b; }
-    function hello() { return "Namaskaar"; }
+    let [country, setMyCountry] = useState("");
 
-    return (
+    return(
         <div>
-            <h1>Age : {Age} , {Age>=18?"Eligible to vote":"Minor"}</h1>
-            <h1>{hello()}</h1>
-            <h1>sum : {sum(2,4)}</h1>
-            <h2>{userObj.name} who live is {userObj.state} have mail id {userObj.email}</h2>
-            <h2>Jai {userArray[2]}-{userArray[0]}<br/>Jai {userArray[3]}-{userArray[1]}</h2>
-            <img src={imgpath} alt={altImgPath} />
+            <h1>{abhivadan()}</h1>
+            <button onClick={greet}>Click me</button>
+            <h1>Add : {add(12,13)}</h1>
+            <button onClick={sky}>Quote</button>
+            <h1>color : {color()}</h1>
+            <button onClick={()=>loc("Delhi")}>Location</button>
+            <h1>multiply : {multiply(10,15)}</h1>
+
+            <h1>I live in : {country}</h1>
+            <button onClick={()=>setMyCountry("India")}>Country</button>
         </div>
+        
     );
 }
 
