@@ -1,43 +1,34 @@
-import React,{useState} from "react";
-function App(){
-    function abhivadan(){
-        return("Namaste");
-    }
-    function greet(){
-        alert("Namaste");
-    }
-    function add(m,n){
-        return m+n;
-    }
-    let sky=()=>{
-        console.log("sky has no limits.");
-    }
-    let color=()=>{
-        return "Red";
-    }
-    let loc = (state)=>{
-        alert(state);
-    }
-    let multiply = (a,b)=>{
-        return a*b;
-    }
+import { useState } from "react";
 
+function App() {
     let [country, setMyCountry] = useState("");
 
-    return(
+    const [fruit, setFruit] = useState("Apple");
+    let updateFruit = () => {
+        setFruit("Mango");
+    }
+    const [count, updateCount] = useState(0);
+
+    const [profession , updateProfession] = useState(null);
+
+    return (
         <div>
-            <h1>{abhivadan()}</h1>
-            <button onClick={greet}>Click me</button>
-            <h1>Add : {add(12,13)}</h1>
-            <button onClick={sky}>Quote</button>
-            <h1>color : {color()}</h1>
-            <button onClick={()=>loc("Delhi")}>Location</button>
-            <h1>multiply : {multiply(10,15)}</h1>
 
             <h1>I live in : {country}</h1>
-            <button onClick={()=>setMyCountry("India")}>Country</button>
+            <button onClick={() => setMyCountry("India")}>Country</button>
+
+            <h1>{fruit}</h1>
+            <button onClick={updateFruit}>Change Fruit</button>
+
+            <h1>Count : {count}</h1>
+            <button onClick={() => updateCount(count + 1)}>increase count</button>
+            <button onClick={() => updateCount(count - 1)}>decrease count</button>
+            <br /><br />
+            
+            <h1>I am a { profession !==null && (profession ? "Student":"Developer")}</h1>
+            <button onClick={()=>updateProfession(!profession)}>who am i</button>
         </div>
-        
+
     );
 }
 
