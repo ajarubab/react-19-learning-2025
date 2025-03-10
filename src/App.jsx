@@ -1,11 +1,11 @@
 import User from "./user";
 
 function App(){
-    let myName = "Raja kumar "
+    let detalils = {Name : "Raja kumar ", Country : "India"};
     return(
         <div>
             <h1>App Component</h1>
-            <User data = {myName}/>
+            <User data = {detalils}/>
         </div>
     )
 }
