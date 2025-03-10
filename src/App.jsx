@@ -1,10 +1,11 @@
 import User from "./user";
 
 function App(){
+    let myName = "Raja kumar "
     return(
         <div>
             <h1>App Component</h1>
-            <User myName = "Raja"/>
+            <User data = {myName}/>
         </div>
     )
 }
