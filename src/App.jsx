@@ -1,59 +1,12 @@
-import { useState } from "react";
 import User from "./user";
 
-function App() {
-    let [country, setMyCountry] = useState("");
-
-    const [fruit, setFruit] = useState("Apple");
-    let updateFruit = () => {
-        setFruit("Mango");
-    }
-    const [count, updateCount] = useState(0);
-    const [profession, updateProfession] = useState(null);
-
-    const [userContent, showUserPageContent] = useState(false);
-    const [dayCount, updateDay] = useState(1);
-
-    return (
+function App(){
+    return(
         <div>
-
-            <h1>I live in : {country}</h1>
-            <button onClick={() => setMyCountry("India")}>Country</button>
-
-            <h1>{fruit}</h1>
-            <button onClick={updateFruit}>Correct National Fruit</button>
-
-            <h1>Count : {count}</h1>
-            <button onClick={() => updateCount(count + 1)}>increase count</button>
-            <button onClick={() => updateCount(count - 1)}>decrease count</button>
-            <br />
-
-            <h1>I am a {profession !== null && (profession ? "Student" : "Developer")}</h1>
-            <button onClick={() => updateProfession(!profession)}>who am i</button>
-
-            <br /><br />
-            <button onClick={() => showUserPageContent(!userContent)}>
-                {userContent ? "Hide User Component Content" : "Show User Component Content"}</button>
-            {userContent ? <User /> : null}
-
-            <h1>Today is :
-                {
-                    dayCount == 1 ? " Monday" :
-                        dayCount == 2 ? " Tuesday " :
-                            dayCount == 3 ? " Wednesday " :
-                                dayCount == 4 ? " Thrusday " :
-                                    dayCount == 5 ? " Friday " :
-                                        dayCount == 6 ? " Saturday " :
-                                            dayCount == 7 ? " Sunday " :
-                                                " Invalid Day "
-
-                }
-            </h1>
-            <button onClick={() => updateDay(dayCount >= 7 ? 1 : dayCount + 1)}>Show me the next Day </button>
-
+            <h1>App Component</h1>
+            <User myName = "Raja"/>
         </div>
-
-    );
+    )
 }
 
 export default App;
