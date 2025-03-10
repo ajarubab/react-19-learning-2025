@@ -12,6 +12,7 @@ function App() {
     const [profession, updateProfession] = useState(null);
 
     const [userContent, showUserPageContent] = useState(false);
+    const [dayCount, updateDay] = useState(1);
 
     return (
         <div>
@@ -34,6 +35,21 @@ function App() {
             <button onClick={() => showUserPageContent(!userContent)}>
                 {userContent ? "Hide User Component Content" : "Show User Component Content"}</button>
             {userContent ? <User /> : null}
+
+            <h1>Today is :
+                {
+                    dayCount == 1 ? " Monday" :
+                        dayCount == 2 ? " Tuesday " :
+                            dayCount == 3 ? " Wednesday " :
+                                dayCount == 4 ? " Thrusday " :
+                                    dayCount == 5 ? " Friday " :
+                                        dayCount == 6 ? " Saturday " :
+                                            dayCount == 7 ? " Sunday " :
+                                                " Invalid Day "
+
+                }
+            </h1>
+            <button onClick={() => updateDay(dayCount >= 7 ? 1 : dayCount + 1)}>Show me the next Day </button>
 
         </div>
 
