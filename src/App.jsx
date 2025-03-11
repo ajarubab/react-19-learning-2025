@@ -1,18 +1,15 @@
-import User from "./user";
+import { useState } from "react";
 
 function App(){
+    const [val,setVal] = useState()
     return(
-        <div>
-            <User color="Blue">
-                <h1>Jai Hind</h1>
-            </User>
-            <User>
-                <h1 align="right">Jai Bharat</h1>
-            </User>
-            <User>
-                <h2 style={{color:"Red", textAlign:"center"}}>Login</h2>
-            </User>
+        <div style={{border:"5px solid Blue", textAlign:"center", width:"350px", padding:"20px"}}>
+            <input type="text" placeholder="Enter your Name" value={val} 
+                onChange={(event)=>setVal(event.target.value)} />
+            <h1> : {val} : </h1>
+            <button onClick={()=>setVal("")}>Clear</button>
         </div>
     )
 }
+
 export default App;
