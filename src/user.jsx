@@ -1,7 +1,7 @@
-function User({myName="Vicky"}){        // default valued prop ( if prop passed, passed value, otherwise default value)
+function User({children, color="Green", align}){        // default valued prop ( if prop passed, passed value, otherwise default value)
     return(
-        <div>
-            <h1>My Name is {myName}</h1>
+        <div style={{border: "5px solid blue", color: color, width: "300px", margin: "10px"}}>
+            {children}
         </div>
     )
 }
