@@ -1,24 +1,8 @@
-function User({ fruits }) {
-    return (
+function User({myName="Vicky"}){        // default valued prop ( if prop passed, passed value, otherwise default value)
+    return(
         <div>
-            <h1>User Component</h1>
-            <div>
-                <h2>A for {fruits[0]}</h2>
-                <h2>B for {fruits[1]}</h2>
-                <h2>C for {fruits[2]}</h2>
-            </div>
-            <div>
-                <h1>Fruit Names</h1>
-                <ul>
-                    {fruits.map((fruit, i) => (
-                        <li key={i}>
-                            <h2>{fruit}</h2>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <h1>My Name is {myName}</h1>
         </div>
-
     )
 }
 
